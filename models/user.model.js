@@ -2,6 +2,8 @@
 const mongoose = require('mongoose');
 /** Function imported from the package validator that check the email (return true or false) */
 const { isEmail } = require('validator');
+/** Module to encrypte data */
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema(
   {
@@ -49,7 +51,14 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+/** Play function before saving */
+userSchema.pre('save', async function (next) {
+  const salt = await bcrypt.genSalt();
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
+});
+
 /** Apply the userSchema on user table in MongoDB */
-const UserModel = mongoose.model('user', userSchema);
+const UserModel = mongoose.model('users', userSchema);
 
 module.exports = UserModel;
