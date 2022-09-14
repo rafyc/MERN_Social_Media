@@ -10,8 +10,8 @@ const userSchema = new mongoose.Schema(
     pseudo: {
       type: String,
       required: true,
-      minLength: 3,
-      maxLenght: 55,
+      minlength: 3,
+      maxlenght: 55,
       unique: true,
       trim: true
     },
@@ -20,13 +20,14 @@ const userSchema = new mongoose.Schema(
       required: true,
       validate: [isEmail],
       lowercase: true,
+      unique: true,
       trim: true
     },
     password: {
       type: String,
       required: true,
       max: 1024,
-      minLenght: 6
+      minlength: 6
     },
     picture: {
       type: String,
@@ -57,6 +58,18 @@ userSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
+
+userSchema.statics.login = async function (email, password) {
+  const user = await this.findOne({ email });
+  if (user) {
+    const auth = await bcrypt.compare(password, user.password);
+    if (auth) {
+      return user;
+    }
+    throw Error('incorrect password');
+  }
+  throw Error('incorrect email');
+};
 
 /** Apply the userSchema on user table in MongoDB */
 const UserModel = mongoose.model('users', userSchema);
