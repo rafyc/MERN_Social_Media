@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const SignInForm = () => {
@@ -7,13 +7,13 @@ const SignInForm = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const emailError = useRef('email.error');
-    const passwordError = useRef('password.error');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
 
     axios({
       method: 'post',
       url: `${process.env.REACT_APP_API_URL}api/users/login`,
-      withCredentials: false,
+      withCredentials: true,
       data: {
         email,
         password
@@ -52,6 +52,7 @@ const SignInForm = () => {
         type='password'
         name='password'
         id='password'
+        autoComplete='on'
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
