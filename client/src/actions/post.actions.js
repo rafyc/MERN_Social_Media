@@ -7,12 +7,14 @@ export const LIKE_POST = "LIKE_POST";
 export const UNLIKE_POST = "UNLIKE_POST";
 export const UPDATE_POST = "UPDATE_POST";
 export const DELETE_POST = "DELETE_POST";
-export const GET_POST_ERRORS = "GET_POST_ERRORS";
 
 // comments
 export const ADD_COMMENT = "ADD_COMMENT";
 export const EDIT_COMMENT = "EDIT_COMMENT";
 export const DELETE_COMMENT = "DELETE_COMMENT";
+
+// errors
+export const GET_POST_ERROR = "GET_POST_ERROR";
 
 export const getPosts = (num) => {
   return (dispatch) => {
@@ -32,9 +34,9 @@ export const addPost = (data) => {
       .post(`${process.env.REACT_APP_API_URL}api/posts/`, data)
       .then((res) => {
         if (res.data.errors) {
-          dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });
+          dispatch({ type: GET_POST_ERROR, payload: res.data.errors });
         } else {
-          dispatch({ type: GET_POST_ERRORS, payload: "" });
+          dispatch({ type: GET_POST_ERROR, payload: "" });
         }
       });
   };
