@@ -5,7 +5,10 @@
   .icons {
     top: 55px;
   }
-
+  button:hover, input[type="submit"]:hover {
+    background: #ffffff;
+    color: #e0003c;
+}
   .log-container {
     margin: 0 auto;
     display: grid;
@@ -231,7 +234,7 @@
         margin: 60px 0 10px;
       }
       h5 {
-        background: $color-1;
+        background: $white;
         color: $color-4;
         font-family: $font-1;
         margin: 20px 0;

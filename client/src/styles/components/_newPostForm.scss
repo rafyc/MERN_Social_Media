@@ -118,6 +118,10 @@
       margin: 0 auto;
       width: 100%;
 
+      p{
+        color: #ffcdd4 !important;
+      }
+
       .icon {
         position: relative;
         cursor: pointer;
@@ -165,16 +169,21 @@
           border-radius: 20px;
           margin-right: 8px;
           background: $white;
+          color: $color-2;
 
           &:hover {
-            color: $color-4;
+            color: #ffb7c2;
             background: $color-3;
           }
         }
         .send {
           &:hover {
             letter-spacing: 2px;
+            background-color: #f74b56;
+            color: #ffb7c2;
           }
+          background-color: white;
+          color: $color-2;
         }
         button {
           @media screen and(max-width: 460px) {

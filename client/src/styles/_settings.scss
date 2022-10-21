@@ -90,7 +90,7 @@ body {
   color: $color-3;
 }
 .error {
-  color: red;
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 .success {
@@ -102,9 +102,32 @@ body .home {
     color: #2c3e50;
 }
 
-.left-nav-container .icons .icons-bis .active-left-nav::after {
-    background: #e0003c !important;
+
+
+.icon-home {
+  background-image: url(../../public/img/icons/home.svg);
 }
-.icons-bis svg:hover {
-    fill: rgb(255, 255, 255);
+.icon-rocket {
+    background-image: url(../../public/img/icons/rocket.svg);
   }
+.icon-user{
+    background-image: url(../../public/img/icons/user.svg);
+  }
+.icon-home:hover,
+.icon-home:focus {
+  background-image: url(../../public/img/icons/home2.svg);
+}
+.icon-rocket:hover,
+.icon-rocket:focus {
+  background-image: url(../../public/img/icons/rocket2.svg);
+}
+.icon-user:hover,
+.icon-user:focus {
+  background-image: url(../../public/img/icons/user2.svg);
+}
+.icon {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-size: cover;
+}
