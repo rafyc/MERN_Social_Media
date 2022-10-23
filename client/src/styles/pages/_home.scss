@@ -27,6 +27,7 @@
         background: $color-4;
         border-radius: 20px;
         padding: 20px;
+        color: white;
 
         ul {
           display: flex;
@@ -41,10 +42,10 @@
             margin: 0 8px;
           }
           .active-btn {
-            background: $color-1;
+            background: #1e1165;
 
             &:hover {
-              background: $color-2;
+              background: #1e1165a9;
             }
           }
           li:not(.active-btn) {

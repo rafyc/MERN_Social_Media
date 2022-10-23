@@ -6,7 +6,8 @@
     top: 55px;
   }
   button:hover, input[type="submit"]:hover {
-    background: #ffffff;
+    background: #1e1165;
+    border: 2px solid transparent !important;
     color: #e0003c;
 }
   .log-container {
@@ -54,10 +55,10 @@
           }
         }
         .active-btn {
-          background: $color-1;
+          background: #1e1165;
 
           &:hover {
-            background: $color-2;
+            background: #1e1165a9;
           }
         }
         li:not(.active-btn) {
@@ -96,7 +97,7 @@
           }
         }
         a {
-          color: rgb(62, 62, 214);
+          color: #1e1165;
         }
       }
     }
@@ -229,7 +230,15 @@
       button {
         margin: 5px 0;
         float: right;
+        background-color: white;
+        color: #e0003c;
+
+        &:hover {
+        background-color: #e0003c;
+        color: white;
+        }
       }
+
       h4 {
         margin: 60px 0 10px;
       }
@@ -342,12 +351,14 @@
             text-align: left;
 
             button {
-              background: $color-4;
+              background: $white;
               border-radius: 20px;
               margin-right: 6px;
+              color: #e0003c;
 
               &:hover {
                 color: $color-3;
+                background: #e0003c;
                 transform: translateX(2px);
               }
             }

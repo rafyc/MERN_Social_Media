@@ -1,3 +1,12 @@
+#sign-up-form input{
+    color: white;
+    border: 2px solid white;
+}
+button:hover, input[type="submit"]:hover {
+    background: #1e1165;
+    border: 2px solid transparent !important;
+    color: #e0003c;
+}
 .connection-from {
   border: 2px solid $color-1;
   width: 400px;
@@ -32,6 +41,7 @@
   }
   .active-btn {
     background: $color-1;
+
   }
   form {
     width: 400px;

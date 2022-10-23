@@ -1,6 +1,6 @@
 .get-friends-container {
   width: 356px;
-  background: linear-gradient(145deg, $color-2 30%, #ffe1d9 100%);
+  background: linear-gradient(145deg, $color-2 30%, #f37272 100%);
   border-radius: 20px;
   padding: 20px 20px 10px;
 
@@ -38,12 +38,13 @@
         text-align: left;
         font-size: 0.9rem;
         font-family: $font-3;
+        color: white;
       }
       span {
         text-align: right;
 
         button {
-          background: $color-1;
+          background: $white;
           color: $color-4;
           padding: 10px 24px 8px;
           transition: 0.2s;

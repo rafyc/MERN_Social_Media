@@ -13,6 +13,8 @@
   ul {
 
     li {
+      color:black;
+      background-color: white !important;
       margin: 5px 0;
       display: grid;
       align-items: center;
@@ -51,7 +53,7 @@
           font-size: .9rem;
         }
         span {
-          color: $color-1;
+          color: $color-2;
           font-family: $font-3;
           position: absolute;
           right: 6px;
