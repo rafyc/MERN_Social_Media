@@ -31,7 +31,7 @@ const LikeButton = ({ post }) => {
           trigger={<img src="./img/icons/heart.svg" alt="like" />}
           position={["bottom center", "bottom right", "bottom left"]}
           closeOnDocumentClick>
-          <div>Connectez-vous pour aimer un post !</div>
+          <div id="connect-to-like">Connectez-vous pour aimer un post !</div>
         </Popup>
       }
       {uid && liked === false && (
