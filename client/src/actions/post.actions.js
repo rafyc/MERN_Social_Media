@@ -1,9 +1,9 @@
-import axios from 'axios'
+import axios from "axios";
 
 // posts
-export const GET_POSTS = 'GET_POSTS';
-export const GET_ALL_POSTS = 'GET_ALL _POSTS';
-export const ADD_POST = 'ADD_POST';
+export const GET_POSTS = "GET_POSTS";
+export const GET_ALL_POSTS = "GET_ALL_POSTS";
+export const ADD_POST = "ADD_POST";
 export const LIKE_POST = "LIKE_POST";
 export const UNLIKE_POST = "UNLIKE_POST";
 export const UPDATE_POST = "UPDATE_POST";
@@ -18,7 +18,7 @@ export const DELETE_COMMENT = "DELETE_COMMENT";
 export const GET_POST_ERROR = "GET_POST_ERROR";
 
 // trends
-export const GET_TRENDS = "GET_TRENDS"
+export const GET_TRENDS = "GET_TRENDS";
 
 export const getPosts = (num) => {
   return (dispatch) => {
@@ -83,7 +83,7 @@ export const updatePost = (postId, message) => {
       data: { message },
     })
       .then((res) => {
-        dispatch({ type: UPDATE_POST, payload: { message, postId } })
+        dispatch({ type: UPDATE_POST, payload: { message, postId } });
       })
       .catch((err) => console.log(err));
   };
@@ -96,7 +96,7 @@ export const deletePost = (postId) => {
       url: `${process.env.REACT_APP_API_URL}api/posts/${postId}`,
     })
       .then((res) => {
-        dispatch({ type: DELETE_POST, payload: { postId } })
+        dispatch({ type: DELETE_POST, payload: { postId } });
       })
       .catch((err) => console.log(err));
   };

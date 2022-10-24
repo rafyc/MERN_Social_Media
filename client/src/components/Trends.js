@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { getTrends } from '../actions/post.actions';
-import { isEmpty } from './Utils';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { getTrends } from "../actions/post.actions";
+import { isEmpty } from "./Utils";
 
 const Trends = () => {
   const posts = useSelector((state) => state.allPostsReducer);
@@ -15,21 +15,21 @@ const Trends = () => {
       const postsArr = Object.keys(posts).map((i) => posts[i]);
       let sortedArr = postsArr.sort((a, b) => {
         return b.likers.length - a.likers.length;
-      })
+      });
       sortedArr.length = 3;
-      dispatch(getTrends(sortedArr))
+      dispatch(getTrends(sortedArr));
     }
-  }, [posts, dispatch])
+  }, [posts, dispatch]);
 
   return (
     <div className="trending-container">
       <h4>Trending</h4>
-      <NavLink to="/trending" >
+      <NavLink to="/trending">
         <ul>
           {trendList.length &&
             trendList.map((post) => {
               return (
-                <li key={post.id}>
+                <li key={post._id}>
                   <div>
                     {post.picture && <img src={post.picture} alt="post-pic" />}
                     {post.video && (
@@ -44,13 +44,19 @@ const Trends = () => {
                       ></iframe>
                     )}
                     {isEmpty(post.picture) && isEmpty(post.video) && (
-                      <img src={usersData[0] && usersData.map((user) => {
-                        if (user._id === post.posterId) {
-                          return user.picture;
-                        } else return null;
-                      })
-                        .join("")
-                      } alt='profile-pic' />
+                      <img
+                        src={
+                          usersData[0] &&
+                          usersData
+                            .map((user) => {
+                              if (user._id === post.posterId) {
+                                return user.picture;
+                              } else return null;
+                            })
+                            .join("")
+                        }
+                        alt="profile-pic"
+                      />
                     )}
                   </div>
                   <div className="trend-content">
@@ -58,7 +64,7 @@ const Trends = () => {
                     <span>Lire</span>
                   </div>
                 </li>
-              )
+              );
             })}
         </ul>
       </NavLink>
