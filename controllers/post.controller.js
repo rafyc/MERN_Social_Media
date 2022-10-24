@@ -27,7 +27,7 @@ module.exports.createPost = async (req, res) => {
       )
         throw Error("Invalid File");
 
-      if (req.file.size > 500000) throw Error("Max size");
+      if (req.file.size > 5000000) throw Error("Max size");
     } catch (err) {
       const errors = uploadErrors(err);
       return res.status(201).json({ errors });
