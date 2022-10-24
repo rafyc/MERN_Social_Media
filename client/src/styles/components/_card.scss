@@ -281,7 +281,14 @@
             transform: scale(1.1);
           }
         }
-
+        #modif{
+            background: white;
+            color: $color-2;
+            &:hover {
+                background-color: #f74b56;
+                color: #ffb7c2;
+            }
+        }
         .edit-comment-form {
           margin-top: 14px;
           label {
@@ -312,7 +319,7 @@
             float: right;
 
             span {
-              background: $white;
+              background: none;
               padding: 10px 5px;
               border-radius: 50px;
               margin-right: 6px;
@@ -320,7 +327,7 @@
               cursor: pointer;
 
               &:hover {
-                background: $color-2;
+                background: rgb(255, 140, 140);
               }
 
               img {
