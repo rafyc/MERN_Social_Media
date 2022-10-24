@@ -58,7 +58,7 @@ const CardComments = ({ post }) => {
           <input type="text" name='text' onChange={(e) => setText(e.target.value)}
             value={text} placeholder="Laisser un commentaire" />
           <br />
-          <input type="submit" value='Envoyer' />
+          <input type="submit" id="envoyer2" value='Envoyer' />
         </form>
       )}
     </div >
