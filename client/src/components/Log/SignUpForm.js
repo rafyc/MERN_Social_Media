@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import SignInForm from './SignInForm';
+import React, { useState } from "react";
+import axios from "axios";
+import SignInForm from "./SignInForm";
 
 const SignUpForm = () => {
   const [formSubmit, setFormSubmit] = useState(false);
-  const [pseudo, setPseudo] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [controlPassword, setControlPassword] = useState('');
+  const [pseudo, setPseudo] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [controlPassword, setControlPassword] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const terms = document.getElementById('terms');
-    const pseudoError = document.querySelector('.pseudo.error');
-    const emailError = document.querySelector('.email.error');
-    const passwordError = document.querySelector('.password.error');
-    const passwordConfirmError = document.querySelector('.password-confirm.error');
-    const termsError = document.querySelector('.terms.error');
+    const terms = document.getElementById("terms");
+    const pseudoError = document.querySelector(".pseudo.error");
+    const emailError = document.querySelector(".email.error");
+    const passwordError = document.querySelector(".password.error");
+    const passwordConfirmError = document.querySelector(
+      ".password-confirm.error"
+    );
+    const termsError = document.querySelector(".terms.error");
 
     passwordConfirmError.innerHTML = "";
     termsError.innerHTML = "";
 
     if (password !== controlPassword || !terms.checked) {
       if (password !== controlPassword) {
-        passwordConfirmError.innerHTML = "Les mots de passe ne correspondent pas";
+        passwordConfirmError.innerHTML =
+          "Les mots de passe ne correspondent pas";
       }
       if (!terms.checked) {
         termsError.innerHTML = "Veuillez valider les conditions générales";
@@ -35,15 +38,15 @@ const SignUpForm = () => {
         data: {
           pseudo,
           email,
-          password
-        }
+          password,
+        },
       })
         .then((res) => {
-          console.log(res)
+          console.log(res);
           if (res.data.errors) {
-            pseudoError.innerHTML = res.data.errors.pseudo
-            emailError.innerHTML = res.data.errors.email
-            passwordError.innerHTML = res.data.errors.password
+            pseudoError.innerHTML = res.data.errors.pseudo;
+            emailError.innerHTML = res.data.errors.email;
+            passwordError.innerHTML = res.data.errors.password;
           } else {
             setFormSubmit(true);
           }
@@ -58,66 +61,68 @@ const SignUpForm = () => {
         <>
           <SignInForm />
           <span></span>
-          <h4 className='success'>"Enregistement réussit, veuillez vous connecter"</h4>
+          <h4 className="success">
+            "Enregistement réussit, veuillez vous connecter"
+          </h4>
         </>
       ) : (
-        <form action='' onSubmit={handleRegister} id='sign-up-form'>
-          <label htmlFor='pseudo'>Pseudo</label>
+        <form action="" onSubmit={handleRegister} id="sign-up-form">
+          <label htmlFor="pseudo">Pseudo</label>
           <br />
           <input
-            type='texte'
-            name='pseudo'
-            id='pseudo'
+            type="texte"
+            name="pseudo"
+            id="pseudo"
             onChange={(e) => setPseudo(e.target.value)}
             value={pseudo}
           />
-          <div className='pseudo error' />
+          <div className="pseudo error" />
           <br />
-          <label htmlFor='email'>Email</label>
+          <label htmlFor="email">Email</label>
           <br />
           <input
-            type='texte'
-            name='email'
-            id='email'
+            type="texte"
+            name="email"
+            id="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-          <div className='email error' />
+          <div className="email error" />
           <br />
-          <label htmlFor='password'>Mot de passe</label>
+          <label htmlFor="password">Mot de passe</label>
           <br />
           <input
-            type='password'
-            name='password'
-            id='password'
-            autoComplete='on'
+            type="password"
+            name="password"
+            id="password"
+            autoComplete="on"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          <div className='password error' />
+          <div className="password error" />
           <br />
-          <label htmlFor='password-conf'>Confirmer mot de passe</label>
+          <label htmlFor="password-conf">Confirmer mot de passe</label>
           <br />
           <input
-            type='password'
-            name='password'
-            id='password-conf'
-            autoComplete='on'
+            type="password"
+            name="password"
+            id="password-conf"
+            autoComplete="on"
             onChange={(e) => setControlPassword(e.target.value)}
             value={controlPassword}
           />
-          <div className='password-confirm error' />
+          <div className="password-confirm error" />
           <br />
-          <input type='checkbox' id='terms' />
-          <label htmlFor='terms'>J'accepte les <a
-            href='/' target='_blank'
-            rel='noopener noreferrer'
-          >conditions générales
-          </a>
+          <input type="checkbox" id="terms" />
+          <label htmlFor="terms">
+            J'accepte les{" "}
+            <a href="/" target="_blank" rel="noopener noreferrer">
+              conditions générales
+            </a>
           </label>
-          <div className='terms error' />
+          <div className="terms error" />
           <br />
-          <input type='submit' id="sub-button" value="Valider l'inscription" />
+          <input type="submit" id="sub-button" value="Valider l'inscription" />
         </form>
       )}
     </>
