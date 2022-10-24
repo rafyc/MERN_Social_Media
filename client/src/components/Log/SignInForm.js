@@ -59,7 +59,7 @@ const SignInForm = () => {
       <br />
       <div className='password error' />
       <br />
-      <input type='submit' value='Se connecter' />
+      <input type='submit' id="btn-connect" value='Se connecter' />
     </form>
   );
 };
