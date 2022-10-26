@@ -44,6 +44,15 @@ const NewPostForm = () => {
     setFile('');
   };
 
+  function linkify(inputText) {
+    //URLs starting with http://, https://, or ftp://
+    const replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+    const replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
+
+
+    return replacedText
+  }
+
   useEffect(() => {
     if (!isEmpty(userData)) setIsLoading(false);
 
@@ -105,7 +114,7 @@ const NewPostForm = () => {
                     <span>{timestampParser(Date.now())}</span>
                   </div>
                   <div className="content">
-                    <p>{message}</p>
+                    <p>{linkify(message)}</p>
                     <img src={postPicture} alt="" />
                     {video && (
                       <iframe
