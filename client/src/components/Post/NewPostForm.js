@@ -43,16 +43,6 @@ const NewPostForm = () => {
     setVideo('');
     setFile('');
   };
-
-  function linkify(inputText) {
-    //URLs starting with http://, https://, or ftp://
-    const replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-    const replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
-
-
-    return replacedText
-  }
-
   useEffect(() => {
     if (!isEmpty(userData)) setIsLoading(false);
 
@@ -73,6 +63,7 @@ const NewPostForm = () => {
     };
     handleVideo();
   }, [userData, message, video]);
+
 
   return (
     <div className="post-container">
@@ -113,8 +104,7 @@ const NewPostForm = () => {
                     </div>
                     <span>{timestampParser(Date.now())}</span>
                   </div>
-                  <div className="content">
-                    <p>{linkify(message)}</p>
+                  <div className="content"><p>{message}</p>
                     <img src={postPicture} alt="" />
                     {video && (
                       <iframe

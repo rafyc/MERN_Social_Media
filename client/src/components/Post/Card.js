@@ -5,7 +5,9 @@ import FollowHandler from '../Profile/FollowHandler';
 import { dateParser, isEmpty } from '../Utils';
 import DeleteCard from './DeleteCard';
 import LikeButton from './LikeButton';
-import CardComments from './CardComments'
+import CardComments from './CardComments';
+import { Anchorme } from 'react-anchorme';
+
 
 const Card = ({ post }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +17,7 @@ const Card = ({ post }) => {
   const usersData = useSelector((state) => state.usersReducer);
   const userData = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
+
 
   const updateItem = () => {
     if (textUpdate) {
@@ -60,7 +63,7 @@ const Card = ({ post }) => {
                 {dateParser(post.createdAt)}
               </span>
             </div>
-            {isUpdated === false && <p>{post.message}</p>}
+            {isUpdated === false && <p className='custom-link'><Anchorme>{post.message}</Anchorme></p>}
             {isUpdated === true && (
               <div className="update-post">
                 <textarea
