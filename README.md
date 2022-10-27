@@ -8,9 +8,7 @@ Une petite description du projet
 
 ## Pour commencer
 
-Démarrer le server : npm start
 
-Démarrer le front : cd client + npm start
 
 ### Pré-requis
 
@@ -22,18 +20,28 @@ Ce qu'il est requis pour commencer avec votre projet...
 
 ### Installation
 
-Les étapes pour installer votre programme....
+_____________________________
 
-Dites ce qu'il faut faire...
+### Back config :
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
-
-
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+* Mettez vos informations de cluster dans `/config/db.js`
+* Créez le fichier `.env` dans `/config/` dans les données suivantes
+   - PORT=5000 `votre port localhost`
+   - CLIENT_URL=http://localhost:3000 `votre URL client`
+   - DB_USER_PASS=fs:fromscratch `votre identifiant et mot de passe`
+   - TOKEN_SECRET=990bf68e6adf1be5f1671bba3bec692056922454 `votre clé secrète aléatoire`
+_________________________
+  
+### Front config : 
+* Créez un fichier `.env` dans l'URL du serveur :
+   - REACT_APP_API_URL=http://localhost:5000/ `l'url de votre serveur`
+_____________________________
 
 ## Démarrage
 
-Dites comment faire pour lancer votre projet
+Démarrer le server : npm start
+
+Démarrer le front : cd client + npm start
 
 ## Fabriqué avec
 
