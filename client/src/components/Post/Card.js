@@ -63,7 +63,7 @@ const Card = ({ post }) => {
                 {dateParser(post.createdAt)}
               </span>
             </div>
-            {isUpdated === false && <p className='custom-link'><Anchorme>{post.message}</Anchorme></p>}
+            {isUpdated === false && <p className='custom-link'><Anchorme target="_blank" rel="noreferrer noopener">{post.message}</Anchorme></p>}
             {isUpdated === true && (
               <div className="update-post">
                 <textarea
