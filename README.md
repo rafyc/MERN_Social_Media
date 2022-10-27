@@ -1,6 +1,6 @@
 # MERN Social Media APP
-React / Express / MongoDB / Redux
-_(juste en dessous des badges sympatiques à placer)_
+*React / Express / MongoDB / Redux*
+
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
