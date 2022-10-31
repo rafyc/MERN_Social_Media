@@ -8,7 +8,7 @@ Projet de fin de cycle de l'école Holberton. C'est un réseau siciale basé sur
 
 ### Pré-requis
 
-Installer une instance d'un projet Ract `npx create-react-app simple-react-app`
+Installer une instance d'un projet React `npx create-react-app simple-react-app`
 
 ### Installation
 
