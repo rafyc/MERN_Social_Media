@@ -4,20 +4,15 @@
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
-Une petite description du projet
-
-## Pour commencer
-
-
+Projet de fin de cycle de l'école Holberton. C'est un réseau siciale basé sur la stack MERN : MongoDb, Express, React, Node.js
 
 ### Pré-requis
 
-Ce qu'il est requis pour commencer avec votre projet...
-
-Installer les package.json dans la racine du projet et dans /client avec $ nmp install
+Installer une instance d'un projet Ract `npx create-react-app simple-react-app`
 
 ### Installation
 
+Installer les package.json dans la racine du projet et dans `/client` avec `$ nmp install`
 _____________________________
 
 ### Back config :
