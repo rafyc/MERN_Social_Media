@@ -74,7 +74,7 @@ Démarrer le front : cd client + npm start
 
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
-* **Raphaël Chemouni** _alias_ [@rafyc](https://github.com/rafyc)
-* **Côme Le Sauter** _alias_ [@comels](https://github.com/comels)
+* **Raphaël Chemouni** _alias_ [@rafyc](https://github.com/rafyc) Linkedin: (https://www.linkedin.com/in/raphael-chemouni/)
+* **Côme Le Sauter** _alias_ [@comels](https://github.com/comels) Linkedin: (https://www.linkedin.com/in/comels)
 
 
