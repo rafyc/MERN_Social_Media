@@ -8,7 +8,7 @@ https://github.com/rafyc/MERN_Social_Media/assets/45367323/2c659035-b276-47a5-95
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
-Projet de fin de cycle de l'école Holberton. C'est un réseau siciale basé sur la stack MERN : MongoDb, Express, React, Node.js
+Projet de fin de cycle de l'école Holberton. C'est un réseau social basé sur la stack MERN : MongoDb, Express, React, Node.js
 
 ### Pré-requis
 
